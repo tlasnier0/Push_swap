@@ -6,7 +6,7 @@
 /*   By: tlasnier <tom.lasnier@learner.42.tech>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/12 11:15:36 by tlasnier          #+#    #+#             */
-/*   Updated: 2026/11/12 14:35:34 by tlasnier         ###   ########.fr       */
+/*   Updated: 2026/11/12 21:21:42 by noclemen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,10 @@
 
 int main(int argc, char **argv)
 {
-	struct s_context context;
+	t_ctx	ctx;
 
-	if(argc <= 1) //valeure a changer
+	if (argc <= 1) // valeur a changer
 		return(0);
-	context = ft_flag_parsing(context, argc, argv);
-	if(context.strategies == 9 || context.bench == 9)
-		return(0);
+	if (parse_args(argc, argv, &ctx) == 0)
+		return (0);
 }

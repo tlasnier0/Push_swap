@@ -6,64 +6,80 @@
 /*   By: tlasnier <tom.lasnier@learner.42.tech>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/12 14:23:23 by tlasnier          #+#    #+#             */
-/*   Updated: 2026/11/12 14:27:35 by tlasnier         ###   ########.fr       */
+/*   Updated: 2026/11/12 21:22:39 by noclemen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_push_swap.h"
 
-static t_context assignflag(t_context context, int flag)
+static int	count_total_elements(int argc, char **argv)
 {
-	if(flag == 0)
-		return(context);
-	else if(flag >= 1 && flag <= 3 && context.strategies != 0)
-	{
-		context.strategies = 9;
-		return (context);
-	}
-	else if(flag == 4 && context.bench == 1)
-	{
-		context.bench = 9;
-		return (context);
-	}
-	if(flag >= 1 && flag <= 3)
-		context.strategies = flag;
-	if(flag == 4)
-		context.bench = 1;
-	return(context);
-	}
+	int		count;
+	int		i;
+	char	**split_args;
+	int		j;
 
-static int detectflag(char *str)
-{
-	if(!(str[0] == '-' && str[1] == '-'))
-		return(0);
-	else if(!ft_strcmp(str, "--simple"))
-		return(1);
-	else if(!ft_strcmp(str, "--medium"))
-		return(2);
-	else if(!ft_strcmp(str, "--complex"))
-		return(3);
-	else if(!ft_strcmp(str, "--adaptive"))
-		return(4);
-	else if(!ft_strcmp(str, "--bench"))
-		return(9);
-	else
-		return(0);
+	count = 0;
+	i = 1;
+	while (i < argc)
+	{
+		if (ft_strncmp(argv[i], "--", 2) == 0)
+		{
+			i++;
+			continue ;
+		}
+		split_args = ft_split(argv[i], ' ');
+		if (!split_args)
+			return (-1);
+		j = 0;
+		while (split_args[j])
+		{
+			count++;
+			j++;
+		}
+		j = 0;
+		while (split_args[j])
+			free(split_args[j++]);
+		free(split_args);
+		i++;
+	}
+	return (count);
 }
 
-t_context ft_flag_parsing (t_context context, int argc, char **argv)
+int	parse_args(int argc, char **argv, t_ctx *ctx)
 {
-	if(detectflag(argv[1]))
+	int	i;
+	int	total_n;
+
+	ctx->strategy = STRAT_ADAPTIVE;
+	ctx->bench = 0;
+	total_n = count_total_elements(argc, argv);
+	if (total_n <= 0)
+		return (0);
+	if (!stack_init(&ctx->a, total_n) || !stack_init(&ctx->b, total_n))
+		return (0);
+	i = 1;
+	while (i < argc)
 	{
-		context = assignflag(context, detectflag(argv[1]));
-		if(detectflag(argv[2]))
-			context = assignflag(context, detectflag(argv[2]));
+		if (ft_strncmp(argv[i], "--", 2) == 0)
+		{
+			if (ft_strncmp(argv[i], "--simple", 8) == 0)
+				ctx->strategy = STRAT_SIMPLE;
+			else if (ft_strncmp(argv[i], "--medium", 8) == 0)
+				ctx->strategy = STRAT_MEDIUM;
+			else if (ft_strncmp(argv[i], "--complex", 9) == 0)
+				ctx->strategy = STRAT_COMPLEX;
+			else if (ft_strncmp(argv[i], "--adaptive", 10) == 0)
+				ctx->strategy = STRAT_ADAPTIVE;
+			else if (ft_strncmp(argv[i], "--bench", 7) == 0)
+				ctx->bench = 1;
+			else
+				return (0);
+		}
+		else {
+			// ajouter les nombres
+		}
+		i++;
 	}
-	else if(detectflag(argv[argc - 1]))
-	{
-		context = assignflag(context, detectflag(argv[argc - 1]));
-		if(detectflag(argv[argc-2]))
-			context = assignflag(context, detectflag(argv[argc - 2]));
-	}
-	return (context);
+	return (1);
 }
