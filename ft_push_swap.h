@@ -6,7 +6,7 @@
 /*   By: tlasnier <tom.lasnier@learner.42.tech>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/12 11:23:52 by tlasnier          #+#    #+#             */
-/*   Updated: 2026/11/12 13:32:37 by tlasnier         ###   ########.fr       */
+/*   Updated: 2026/11/12 14:28:39 by tlasnier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ typedef struct s_context
 /// libft
 int	ft_strcmp(const char *str1, const char *str2);
 
-
+// ft_flag_parsing.c
+t_context ft_flag_parsing (t_context context, int argc, char **argv);
 
 #endif
