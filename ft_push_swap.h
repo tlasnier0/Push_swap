@@ -6,7 +6,7 @@
 /*   By: tlasnier <tom.lasnier@learner.42.tech>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/12 11:23:52 by tlasnier          #+#    #+#             */
-/*   Updated: 2026/11/12 21:21:37 by noclemen         ###   ########.fr       */
+/*   Updated: 2026/11/13 16:47:49 by tlasnier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,12 @@ typedef enum e_complexity
   CPLX_NLOGN
 }    t_complexity;
 
-
+typedef struct	s_parsing
+{
+	char *flag1;
+	char *flag2;
+	int *stack;
+}	t_parsing;
 
 typedef struct	s_ctx
 {

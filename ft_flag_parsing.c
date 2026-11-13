@@ -6,7 +6,7 @@
 /*   By: tlasnier <tom.lasnier@learner.42.tech>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/12 14:23:23 by tlasnier          #+#    #+#             */
-/*   Updated: 2026/11/13 10:37:57 by noclemen         ###   ########.fr       */
+/*   Updated: 2026/11/13 14:38:54 by tlasnier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,7 +89,7 @@ int	parse_args(int argc, char **argv, t_ctx *ctx)
 				return (0);
 		}
 		else {
-			// ajouter les nombres
+
 		}
 		i++;
 	}
