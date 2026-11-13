@@ -1,25 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcmp.c                                        :+:      :+:    :+:   */
+/*   isdigit.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tlasnier <tom.lasnier@learner.42.tech>     +#+  +:+       +#+        */
+/*   By: noclemen <noclemen@student.42prague.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/09/21 22:32:38 by tlasnier          #+#    #+#             */
-/*   Updated: 2026/11/12 21:14:26 by noclemen         ###   ########.fr       */
+/*   Created: 2026/11/02 11:23:53 by noclemen          #+#    #+#             */
+/*   Updated: 2026/11/02 14:22:43 by noclemen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-int	ft_strncmp(const char *str1, const char *str2, size_t n)
+int	ft_isdigit(int c)
 {
-	size_t	i;
-
-	i = 0;
-	while (i < n && str1[i] && str1[i] == str2[i])
-		i++;
-	if (i == n)
-		return (0);
-	return ((unsigned char)str1[i] - (unsigned char)str2[i]);
+	return (c >= 48 && c <= 57);
 }

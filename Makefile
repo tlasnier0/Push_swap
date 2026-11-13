@@ -1,5 +1,5 @@
 NAME = push_swap
-SRCS = main.c ft_push_swap.c ft_flag_parsing.c
+SRCS = main.c ft_push_swap.c ft_flag_parsing.c ft_flag_parsing_utils.c ft_print_error.c
 OBJS = $(SRCS:.c=.o)
 CFLAGS  = -Wall -Werror -Wextra
 LIBFT_DIR = libft
@@ -23,6 +23,6 @@ fclean: clean
 	rm -f $(NAME)
 	make -C $(LIBFT_DIR) fclean
 
-re: fclean clean
+re: fclean all
 
 .PHONY: all clean fclean re

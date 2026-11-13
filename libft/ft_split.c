@@ -6,7 +6,7 @@
 /*   By: noclemen <noclemen@student.42prague.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/04 18:10:17 by noclemen          #+#    #+#             */
-/*   Updated: 2026/11/05 22:16:09 by noclemen         ###   ########.fr       */
+/*   Updated: 2026/11/13 21:53:54 by noclemen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,20 +67,18 @@ static void	free_tab(char **tab, int j)
 
 char	**ft_split(const char *s, char c)
 {
-	int		nb_words;
 	char	**tab;
 	int		i;
 	int		j;
 
 	if (!s)
 		return (NULL);
-	nb_words = count_words(s, c);
-	tab = malloc(sizeof(char *) * (nb_words + 1));
+	tab = malloc(sizeof(char *) * (count_words(s, c) + 1));
 	if (!tab)
 		return (NULL);
-	i = 0;
+	i = -1;
 	j = 0;
-	while (s[i])
+	while (s[++i])
 	{
 		if (s[i] != c && (i == 0 || s[i - 1] == c))
 		{
@@ -89,7 +87,6 @@ char	**ft_split(const char *s, char c)
 				return (free_tab(tab, j), NULL);
 			j++;
 		}
-		i++;
 	}
 	tab[j] = NULL;
 	return (tab);
