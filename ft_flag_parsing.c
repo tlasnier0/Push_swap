@@ -6,11 +6,23 @@
 /*   By: tlasnier <tom.lasnier@learner.42.tech>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/12 14:23:23 by tlasnier          #+#    #+#             */
-/*   Updated: 2026/11/12 21:22:39 by noclemen         ###   ########.fr       */
+/*   Updated: 2026/11/13 10:37:57 by noclemen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_push_swap.h"
+
+static int	stack_init(t_stack *stack, int size)
+{
+	if (size < 0)
+		return (0);
+	stack->size = 0;
+	stack->capacity = (size_t)size;
+	stack->data = malloc(sizeof(int) * size);
+	if (!stack->data)
+		return (0);
+	return (1);
+}
 
 static int	count_total_elements(int argc, char **argv)
 {

@@ -1,8 +1,8 @@
 NAME = push_swap
-SRCS = main.c ft_push_swap.c ft_push_swap_utils.c
+SRCS = main.c ft_push_swap.c ft_flag_parsing.c
 OBJS = $(SRCS:.c=.o)
 CFLAGS  = -Wall -Werror -Wextra
-LIBFT_DIR = libtf
+LIBFT_DIR = libft
 LIBFT = $(LIBFT_DIR)/libft.a
 INCLUDES = -I $(LIBFT_DIR)
 

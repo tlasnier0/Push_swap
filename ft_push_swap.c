@@ -12,7 +12,7 @@
 
 #include "ft_push_swap.h"
 
-void ft_push_swap(t_context *context)
+void ft_push_swap(void)
 {
-
+	return ;
 }
