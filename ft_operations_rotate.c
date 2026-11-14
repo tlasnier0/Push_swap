@@ -6,7 +6,7 @@
 /*   By: tlasnier <tom.lasnier@learner.42.tech>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/14 14:06:17 by tlasnier          #+#    #+#             */
-/*   Updated: 2026/11/14 14:46:45 by tlasnier         ###   ########.fr       */
+/*   Updated: 2026/11/14 14:49:49 by tlasnier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,4 +52,3 @@ void	rr(t_ctx *ctx)
 	if (did_a || did_b)
 		write(1, "rr\n", 3);
 }
-

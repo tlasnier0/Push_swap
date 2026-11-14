@@ -6,17 +6,17 @@
 /*   By: tlasnier <tom.lasnier@learner.42.tech>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/14 14:06:17 by tlasnier          #+#    #+#             */
-/*   Updated: 2026/11/14 14:43:59 by tlasnier         ###   ########.fr       */
+/*   Updated: 2026/11/14 14:49:41 by tlasnier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_push_swap.h"
 
-static int push(t_stack *from, t_stack *to)
+static int	push(t_stack *from, t_stack *to)
 {
-	int i;
+	int	i;
 
-	if(from->size == 0)
+	if (from->size == 0)
 		return (0);
 	i = to->size;
 	while (i > 0)
@@ -27,7 +27,7 @@ static int push(t_stack *from, t_stack *to)
 	to->data[0] = from->data[0];
 	to->size++;
 	i = 0;
-	while(i < from->size - 1)
+	while (i < from->size - 1)
 	{
 		from->data[i] = from->data[i + 1];
 		i++;
@@ -47,4 +47,3 @@ void	pb(t_ctx *ctx)
 	if (push(&ctx->a, &ctx->b))
 		write(1, "pb\n", 3);
 }
-

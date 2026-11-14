@@ -6,17 +6,17 @@
 /*   By: tlasnier <tom.lasnier@learner.42.tech>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/14 14:06:17 by tlasnier          #+#    #+#             */
-/*   Updated: 2026/11/14 14:30:07 by tlasnier         ###   ########.fr       */
+/*   Updated: 2026/11/14 14:49:08 by tlasnier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_push_swap.h"
 
-static int swap(t_stack *s)
+static int	swap(t_stack *s)
 {
-	t_elem temp;
+	t_elem	temp;
 
-	if(s->size < 2)
+	if (s->size < 2)
 		return (0);
 	temp = s->data[0];
 	s->data[0] = s->data[1];
@@ -38,8 +38,8 @@ void	sb(t_ctx *ctx)
 
 void	ss(t_ctx *ctx)
 {
-	int a;
-	int b;
+	int	a;
+	int	b;
 
 	a = swap(&ctx->a);
 	b = swap(&ctx->b);
