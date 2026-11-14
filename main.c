@@ -6,7 +6,7 @@
 /*   By: tlasnier <tom.lasnier@learner.42.tech>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/12 11:15:36 by tlasnier          #+#    #+#             */
-/*   Updated: 2026/11/14 15:58:40 by noclemen         ###   ########.fr       */
+/*   Updated: 2026/11/14 16:00:57 by noclemen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,8 @@ int	main(int argc, char **argv)
 	ctx.disorder = compute_disorder(&ctx.a);
 	// Lancer l algo
 	// ft_push_swap(&ctx)
+	if (ctx.bench)
+		print_bench(&ctx);
 	free(ctx.a.data);
 	free(ctx.b.data);
 	return (0);

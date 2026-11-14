@@ -6,7 +6,7 @@
 /*   By: tlasnier <tom.lasnier@learner.42.tech>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/12 11:23:52 by tlasnier          #+#    #+#             */
-/*   Updated: 2026/11/14 15:55:52 by noclemen         ###   ########.fr       */
+/*   Updated: 2026/11/14 17:36:59 by noclemen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,22 @@ typedef enum e_complexity
 	CPLX_NLOGN
 }	t_complexity;
 
+typedef enum e_op
+{
+	SA,
+	SB,
+	SS,
+	PA,
+	PB,
+	RA,
+	RB,
+	RR,
+	RRA,
+	RRB,
+	RRR,
+	OP_COUNT
+}	t_op;
+
 typedef struct s_ctx
 {
 	t_stack			a;
@@ -56,6 +72,7 @@ typedef struct s_ctx
 	t_complexity	complexity;
 	int				bench;
 	size_t			disorder;
+	size_t			ops[OP_COUNT];
 }	t_ctx;
 
 int		parse_args(int argc, char **argv, t_ctx *ctx);
@@ -76,5 +93,8 @@ void	rra(t_ctx *ctx);
 void	rrb(t_ctx *ctx);
 void	rrr(t_ctx *ctx);
 size_t	compute_disorder(const t_stack *s);
+void	print_bench(const t_ctx *ctx);
+void	put_ops_line2_fd(const t_ctx *ctx, int fd);
+void	put_ops_line1_fd(const t_ctx *ctx, int fd);
 
 #endif

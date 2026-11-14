@@ -15,10 +15,14 @@
 
 # include <stddef.h>
 # include <stdlib.h>
+# include <unistd.h>
 
 int		ft_strncmp(const char s1[], const char s2[], size_t n);
 char	**ft_split(const char *s, char c);
 int		ft_isdigit(int c);
+void	ft_putchar_fd(char c, int fd);
+void	ft_putstr_fd(char *s, int fd);
+void	ft_putnbr_fd(int n, int fd);
 void	ft_bzero(void *s, size_t n);
 
 #endif

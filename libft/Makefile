@@ -1,6 +1,6 @@
 NAME = libft.a
 CFLAGS = -Wall -Wextra -Werror
-SRCS = ft_split.c ft_strncmp.c ft_isdigit.c ft_bzero.c
+SRCS = ft_split.c ft_strncmp.c ft_isdigit.c ft_bzero.c ft_putchar_fd.c ft_putnbr_fd.c ft_putstr_fd.c
 OBJS = $(SRCS:.c=.o)
 
 all: $(NAME)
