@@ -6,14 +6,13 @@
 /*   By: tlasnier <tom.lasnier@learner.42.tech>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/12 11:23:52 by tlasnier          #+#    #+#             */
-/*   Updated: 2026/11/13 21:57:59 by noclemen         ###   ########.fr       */
+/*   Updated: 2026/11/14 13:33:51 by tlasnier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_PUSH_SWAP_H
 # define FT_PUSH_SWAP_H
 
-# include <stddef.h>
 # include <unistd.h>
 # include <limits.h>
 # include <stddef.h>
@@ -57,6 +56,9 @@ typedef struct s_ctx
 
 int		parse_args(int argc, char **argv, t_ctx *ctx);
 void	ft_print_error(void);
-void	ft_print_error(void);
+int		free_and_error(t_ctx *ctx, int print_err);
+int		ft_is_valid_int(char *str, int *val);
+int		has_duplicate(t_stack *stack, int val);
+int		count_total_elements(int argc, char **argv);
 
 #endif

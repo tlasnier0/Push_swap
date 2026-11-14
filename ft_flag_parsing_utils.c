@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_flag_parsing_utils.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: noclemen <noclemen@student.42prague.com>   +#+  +:+       +#+        */
+/*   By: tlasnier <tom.lasnier@learner.42.tech>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/13 22:00:06 by noclemen          #+#    #+#             */
-/*   Updated: 2026/11/13 22:00:13 by noclemen         ###   ########.fr       */
+/*   Updated: 2026/11/14 13:49:31 by tlasnier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

@@ -6,7 +6,7 @@
 /*   By: tlasnier <tom.lasnier@learner.42.tech>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/12 11:15:36 by tlasnier          #+#    #+#             */
-/*   Updated: 2026/11/13 21:49:55 by noclemen         ###   ########.fr       */
+/*   Updated: 2026/11/14 13:50:13 by tlasnier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,8 @@ static void	print_debug(t_ctx *ctx)
 
 	printf("Bench mode: %s\n", ctx->bench ? "ON" : "OFF");
 
-	printf("Strack A (size: %zu, capacity: %zu):\n[", ctx->a.size, ctx->a.capacity);
+	printf("Strack A (size: %zu, capacity: %zu):\n[",
+		 ctx->a.size, ctx->a.capacity);
 	i = 0;
 	while (i < ctx->a.size)
 		printf("%d", ctx->a.data[i++].value);
