@@ -1,0 +1,5 @@
+checker/
+*.pdf
+*.o
+*.a
+push_swap
