@@ -6,7 +6,7 @@
 /*   By: tlasnier <tom.lasnier@learner.42.tech>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/12 14:23:23 by tlasnier          #+#    #+#             */
-/*   Updated: 2026/11/14 13:49:12 by tlasnier         ###   ########.fr       */
+/*   Updated: 2026/11/14 13:56:30 by tlasnier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,6 +83,7 @@ int	parse_args(int argc, char **argv, t_ctx *ctx)
 	int	i;
 	int	total_n;
 
+	ft_bzero(ctx, sizeof(t_ctx));
 	ctx->strategy = STRAT_ADAPTIVE;
 	ctx->bench = 0;
 	total_n = count_total_elements(argc, argv);
