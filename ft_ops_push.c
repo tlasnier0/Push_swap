@@ -1,48 +1,55 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_operations_swap.c                               :+:      :+:    :+:   */
+/*   ft_operations_push.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tlasnier <tom.lasnier@learner.42.tech>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/14 14:06:17 by tlasnier          #+#    #+#             */
-/*   Updated: 2026/11/14 14:49:08 by tlasnier         ###   ########.fr       */
+/*   Updated: 2026/11/14 14:49:41 by tlasnier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_push_swap.h"
 
-static int	swap(t_stack *s)
+static int	push(t_stack *from, t_stack *to)
 {
-	t_elem	temp;
+	size_t	i;
 
-	if (s->size < 2)
+	if (from->size == 0)
 		return (0);
-	temp = s->data[0];
-	s->data[0] = s->data[1];
-	s->data[1] = temp;
+	i = to->size;
+	while (i > 0)
+	{
+		to->data[i] = to->data[i - 1];
+		i--;
+	}
+	to->data[0] = from->data[0];
+	to->size++;
+	i = 0;
+	while (i < from->size - 1)
+	{
+		from->data[i] = from->data[i + 1];
+		i++;
+	}
+	from->size--;
 	return (1);
 }
 
-void	sa(t_ctx *ctx)
+void	pa(t_ctx *ctx)
 {
-	if (swap(&ctx->a))
-		write(1, "sa\n", 3);
+	if (push(&ctx->b, &ctx->a))
+	{
+		write(1, "pa\n", 3);
+		ctx->ops[PA]++;
+	}
 }
 
-void	sb(t_ctx *ctx)
+void	pb(t_ctx *ctx)
 {
-	if (swap(&ctx->b))
-		write(1, "sb\n", 3);
-}
-
-void	ss(t_ctx *ctx)
-{
-	int	a;
-	int	b;
-
-	a = swap(&ctx->a);
-	b = swap(&ctx->b);
-	if (a || b)
-		write (1, "ss\n", 3);
+	if (push(&ctx->a, &ctx->b))
+	{
+		write(1, "pb\n", 3);
+		ctx->ops[PB]++;
+	}
 }

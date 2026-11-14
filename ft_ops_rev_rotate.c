@@ -33,13 +33,19 @@ static int	rev_rotate(t_stack *s)
 void	rra(t_ctx *ctx)
 {
 	if (rev_rotate(&ctx->a))
+	{
 		write(1, "rra\n", 4);
+		ctx->ops[RRA]++;
+	}
 }
 
 void	rrb(t_ctx *ctx)
 {
 	if (rev_rotate(&ctx->b))
+	{
 		write(1, "rrb\n", 4);
+		ctx->ops[RRB]++;
+	}
 }
 
 void	rrr(t_ctx *ctx)
@@ -50,5 +56,8 @@ void	rrr(t_ctx *ctx)
 	did_a = rev_rotate(&ctx->a);
 	did_b = rev_rotate(&ctx->b);
 	if (did_a || did_b)
+	{
 		write(1, "rrr\n", 4);
+		ctx->ops[RRR]++;
+	}
 }

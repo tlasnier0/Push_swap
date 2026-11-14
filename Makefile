@@ -1,7 +1,7 @@
 NAME = push_swap
 BENCH_SRCS = ft_bench.c ft_bench_utils.c
 PARSE_SRCS = ft_flag_parsing.c ft_flag_parsing_utils.c
-OP_SRCS = ft_operations_push.c ft_operations_rev_rotate.c ft_operations_rotate.c ft_operations_swap.c
+OP_SRCS = ft_ops_push.c ft_ops_rev_rotate.c ft_ops_rotate.c ft_ops_swap.c
 OTHER_SRCS = ft_push_swap.c ft_disorder.c ft_print_error.c
 SRCS = main.c $(BENCH_SRCS) $(PARSE_SRCS) $(OP_SRCS) $(OTHER_SRCS)
 OBJS = $(SRCS:.c=.o)
