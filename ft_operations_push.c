@@ -14,7 +14,7 @@
 
 static int	push(t_stack *from, t_stack *to)
 {
-	int	i;
+	size_t	i;
 
 	if (from->size == 0)
 		return (0);
