@@ -96,5 +96,11 @@ size_t	compute_disorder(const t_stack *s);
 void	print_bench(const t_ctx *ctx);
 void	put_ops_line2_fd(const t_ctx *ctx, int fd);
 void	put_ops_line1_fd(const t_ctx *ctx, int fd);
+void	sort_minmax(t_ctx *ctx);
+size_t	find_min_pos(const t_stack *s);
+size_t	find_max_pos(const t_stack *s);
+int		is_sorted(const t_stack *s);
+void	rotate_a_to(t_ctx *ctx, size_t pos);
+void	rotate_b_to(t_ctx *ctx, size_t pos);
 
 #endif
