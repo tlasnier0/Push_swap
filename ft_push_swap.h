@@ -6,7 +6,7 @@
 /*   By: tlasnier <tom.lasnier@learner.42.tech>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/12 11:23:52 by tlasnier          #+#    #+#             */
-/*   Updated: 2026/11/14 17:36:59 by noclemen         ###   ########.fr       */
+/*   Updated: 2026/11/15 15:41:42 by tlasnier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,8 @@
 
 typedef struct s_elem
 {
-	int	value;
+	int		value;
+	size_t	index;
 }	t_elem;
 
 typedef struct s_stack
@@ -102,5 +103,9 @@ size_t	find_max_pos(const t_stack *s);
 int		is_sorted(const t_stack *s);
 void	rotate_a_to(t_ctx *ctx, size_t pos);
 void	rotate_b_to(t_ctx *ctx, size_t pos);
+void	ft_push_swap(t_ctx *ctx);
+void	index_stack(t_stack *s);
+void	sort_butterfly_chunk(t_ctx *ctx);
+void	sort_radix(t_ctx *ctx);
 
 #endif

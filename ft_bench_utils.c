@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_bench_utils.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: noclemen <noclemen@student.42prague.com>   +#+  +:+       +#+        */
+/*   By: tlasnier <tom.lasnier@learner.42.tech>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/14 17:41:57 by noclemen          #+#    #+#             */
-/*   Updated: 2026/11/14 17:57:29 by noclemen         ###   ########.fr       */
+/*   Updated: 2026/11/15 15:36:35 by tlasnier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,5 +46,7 @@ void	put_ops_line2_fd(const t_ctx *ctx, int fd)
 	put_op_fd("rra", ctx->ops[RRA], fd);
 	ft_putchar_fd(' ', fd);
 	put_op_fd("rrb", ctx->ops[RRB], fd);
+	ft_putchar_fd('\n', fd);
+	put_op_fd("rrr", ctx->ops[RRR], fd);
 	ft_putchar_fd('\n', fd);
 }
