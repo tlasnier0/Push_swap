@@ -46,7 +46,7 @@ void	put_ops_line2_fd(const t_ctx *ctx, int fd)
 	put_op_fd("rra", ctx->ops[RRA], fd);
 	ft_putchar_fd(' ', fd);
 	put_op_fd("rrb", ctx->ops[RRB], fd);
-	ft_putchar_fd('\n', fd);
+	ft_putchar_fd(' ', fd);
 	put_op_fd("rrr", ctx->ops[RRR], fd);
 	ft_putchar_fd('\n', fd);
 }
