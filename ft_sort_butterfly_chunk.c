@@ -3,36 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_sort_butterfly_chunk.c                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tlasnier <tom.lasnier@learner.42.tech>     +#+  +:+       +#+        */
+/*   By: noclemen <noclemen@student.42prague.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/11/15 15:17:12 by tlasnier          #+#    #+#             */
-/*   Updated: 2026/11/15 15:29:12 by tlasnier         ###   ########.fr       */
+/*   Created: 2026/11/16 12:20:45 by noclemen          #+#    #+#             */
+/*   Updated: 2026/11/16 12:21:22 by noclemen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_push_swap.h"
-
-void	index_stack(t_stack *s)
-{
-	size_t	i;
-	size_t	j;
-	size_t	rank;
-
-	i = 0;
-	while (i < s->size)
-	{
-		rank = 0;
-		j = 0;
-		while (j < s->size)
-		{
-			if (s->data[j].value < s->data[i].value)
-				rank++;
-			j++;
-		}
-		s->data[i].index = rank;
-		i++;
-	}
-}
 
 static size_t	ft_sqrt(size_t n)
 {
